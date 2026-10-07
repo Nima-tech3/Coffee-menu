@@ -38,5 +38,6 @@ Contributions are welcome! Please fork this repository and submit a pull request
 
 ## Disclaimer
 
-~This script is intended for educational purposes only. Ensure that you comply with YouTube's Terms of Service when using this script.~
+This script is intended for educational purposes only. Ensure that you comply with YouTube's Terms of Service when using this script.
 
+# Coffee-menu
