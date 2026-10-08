@@ -101,7 +101,6 @@ while True: # Project Main loop.
                     slow_print("\nYour checkout: ", delay)
                     for item , price in orders:
                         slow_print(f"- {item}: ${price:.2f}",  delay)
-                    #   with open("orders.json", "w") as file: # Create or overwrite orders.json with an empty list.
                         json.dump([], file, indent=2)
                     slow_print(f"Total: ${total:.2f}", delay)
                     slow_print("Thank you for your orders!", delay)
@@ -113,9 +112,6 @@ while True: # Project Main loop.
                 break
             else:
                 slow_print("\nYour option does not exist. Please try again.", delay)
-
-#        except:
-#            slow_print("\nYour option does not exist. Please try again.", delay)
         except KeyboardInterrupt:
             print("\nbye bye :3")
             sys.exit()
