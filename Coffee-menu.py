@@ -58,8 +58,9 @@ while True: # Project Main loop.
                 print(f"{number}. {name} - ${price:.2f}")
 
             print("5. View Order")
-            print("6. Checkout")
-            print("7. Exit")
+            print("6. Reset")
+            print("7. Checkout")
+            print("8. Exit")
             print("=" * 33)
 
             option = input("Choose an option: ").strip()
@@ -81,8 +82,17 @@ while True: # Project Main loop.
                     for item, price in orders:
                         slow_print(f"- {item}: ${price:.2f}\n", delay)
                         print("*" * 40)
-
             elif option == "6":
+                if not orders:
+                    slow_print("- Your order is empty. Please add items before reseting.\n", delay)
+                else:
+                    slow_print("reseting orders...", delay=0.18)
+                    with open("orders.json", "w") as file: # Create or overwrite orders.json with an empty list.
+                        json.dump([], file, indent=2)
+                        total = 0
+                        orders = []
+
+            elif option == "7":
                 if not orders:
                     slow_print("- Your order is empty. Please add items before checkout.\n", delay)
                 else:
@@ -91,14 +101,14 @@ while True: # Project Main loop.
                     slow_print("\nYour checkout: ", delay)
                     for item , price in orders:
                         slow_print(f"- {item}: ${price:.2f}",  delay)
-                        with open("orders.json", "w") as file: # Create or overwrite orders.json with an empty list.
-                            json.dump([], file, indent=2)
+                    #   with open("orders.json", "w") as file: # Create or overwrite orders.json with an empty list.
+                        json.dump([], file, indent=2)
                     slow_print(f"Total: ${total:.2f}", delay)
                     slow_print("Thank you for your orders!", delay)
                     
                     break
             
-            elif option == "7":
+            elif option == "8":
                 slow_print("Thank you for visiting!", delay)
                 break
             else:
