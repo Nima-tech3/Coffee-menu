@@ -8,16 +8,11 @@ This repository contains simple coffee order menu written with **python** which 
 **Note:** This is really small python project which is just written for train.
 
 
-## Features
-
-    -Python training 
-    -Saving and loading data in json file
-    
-
+---
 ## Requirements
 
-    -**python**
-    -**json, os, datetime, time, sys**: Ensure these are imported on your system. 
+    -**python3**
+  and that's it :D
 
 
 ## Usage 
